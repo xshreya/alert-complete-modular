@@ -1,6 +1,3 @@
-variable "recipient-email" {
-  description = "email of the recipient of alert"
-}
 
 variable "region-newrelic" {
   description = "newrelic region"
@@ -15,4 +12,8 @@ variable "nr_account_id" {
 variable "nr_api_key" {
   description = "New Relic API Key"
   type        = string
+}
+
+variable "channel_id" {
+  type = string
 }
