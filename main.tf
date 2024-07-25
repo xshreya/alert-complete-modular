@@ -1,6 +1,6 @@
 # module "policy" {
 #   source = "./policy"
-#   policy_name = "policy01"
+#   policy_name = var.policy_name
 #   nr_account_id = var.nr_account_id
 #   nr_api_key = var.nr_api_key
 #   region-newrelic = var.region-newrelic

@@ -13,9 +13,9 @@ variable "nr_api_key" {
   type        = string
 }
 
-# variable "policy_id" {
-#   type = number
-# }
+variable "policy_name" {
+  type = string
+}
 
 variable "recipient-email" {
   description = "email of the recipient of alert"
