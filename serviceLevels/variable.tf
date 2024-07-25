@@ -13,20 +13,6 @@ variable "nr_api_key" {
   type        = string
 }
 
-# variable "policy_id" {
-#   type = number
-# }
-
-variable "recipient-email" {
-  description = "email of the recipient of alert"
-}
-
-variable "my-conditions" {
-  description = "condition configuration"
-  type = map(map(any))
-}
-
 variable "serviceLevels" {
-  description = "service level details"
   type = map(map(any))
 }
