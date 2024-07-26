@@ -2,11 +2,11 @@
 #DESTINATION 
 resource "newrelic_notification_destination" "destination01" {
   account_id =  var.nr_account_id
-  name = "destination01"
-  type = "EMAIL"
+  name = var.destination_details.name
+  type = var.destination_details.type
 
   property {
-    key = "email"
-    value = var.recipient-email
+    key = var.destination_details.property_key
+    value = var.destination_details.recipient-email
   }
 }

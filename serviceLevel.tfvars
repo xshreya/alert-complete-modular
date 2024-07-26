@@ -1,5 +1,4 @@
 region-newrelic = "US"
-recipient-email = "xshreya.sharma@gmail.com"
 
 serviceLevels = {
   "sl1" = {
@@ -17,6 +16,7 @@ serviceLevels = {
     bad_select = "COUNT"
     target = 99
     rolling_count = 7
+    rolling_unit = "DAY"
   },
   "sl2" = {
     name = "sl2-synthetic-success"
@@ -33,6 +33,7 @@ serviceLevels = {
     bad_select = "COUNT"
     target = 99
     rolling_count = 7
+    rolling_unit = "DAY"
   },
   "sl3" = {
     name = "sl3-success-Browser"
@@ -49,6 +50,7 @@ serviceLevels = {
     bad_select = "COUNT"
     target = 99.99
     rolling_count = 7
+    rolling_unit = "DAY"
   }, 
   "sl4" = {
     name = "sl4-lcp"
@@ -65,6 +67,7 @@ serviceLevels = {
     bad_select = ""
     target = 95
     rolling_count = 7
+    rolling_unit = "DAY"
   }, 
   "sl5" = {
     name = "sl5-inp"
@@ -81,5 +84,6 @@ serviceLevels = {
     bad_select = ""
     target = 95
     rolling_count = 7
+    rolling_unit = "DAY"
   }
 }

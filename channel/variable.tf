@@ -14,6 +14,18 @@ variable "nr_api_key" {
   type        = string
 }
 
+variable "channel_details" {
+  type = object({
+    name = string
+    type = string
+    product = string
+    subject_property_key = string
+    subject_property_value = string
+    details_property_key = string
+    details_property_value = string
+  })
+}
+
 variable "destination_id" {
   type = string
 }

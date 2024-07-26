@@ -1,7 +1,14 @@
+# POLICY CREATION
+resource "newrelic_alert_policy" "policy01" {
+  name = var.policy_details.name
+  incident_preference =  var.policy_details.incident_preference # PER_POLICY is default
+}
+
+
 # CONDITION 
 resource "newrelic_nrql_alert_condition" "condition" {
   for_each = var.my-conditions
-  policy_id                      = var.policy_id
+  policy_id                      = newrelic_alert_policy.policy01.id
   account_id                     = var.nr_account_id
   name                           = each.value.name
   description                    = each.value.description
@@ -23,16 +30,16 @@ resource "newrelic_nrql_alert_condition" "condition" {
   }
 
   critical {
-    operator              = "above"
+    operator              = each.value.crt_operator
     threshold             = each.value.critical_threshold
     threshold_duration    = each.value.crt_threshold_duration
-    threshold_occurrences = "ALL"
+    threshold_occurrences = each.value.crt_threshold_occurences
   }
 
   warning {
-    operator              = "above"
+    operator              = each.value.war_operator
     threshold             = each.value.warning_threshold
     threshold_duration    = each.value.war_threshold_duration
-    threshold_occurrences = "ALL"
+    threshold_occurrences = each.value.war_threshold_occurences
   }
 }

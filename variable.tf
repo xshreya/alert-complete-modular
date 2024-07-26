@@ -13,18 +13,58 @@ variable "nr_api_key" {
   type        = string
 }
 
-variable "policy_name" {
-  type = string
+# POLICY
+variable "policy_details" {
+  type = object({
+    name = string
+    incident_preference = string
+  })
 }
 
-variable "recipient-email" {
-  description = "email of the recipient of alert"
-}
-
+# CONDITION
 variable "my-conditions" {
   description = "condition configuration"
   type = map(map(any))
 }
+
+# DESTINATION
+variable "destination_details" {
+  type = object({
+    name = string
+    type = string
+    property_key = string
+    recipient-email = string
+  })
+}
+
+# CHANNEL 
+variable "channel_details" {
+  type = object({
+    name = string
+    type = string
+    product = string
+    subject_property_key = string
+    subject_property_value = string
+    details_property_key = string
+    details_property_value = string
+  })
+}
+
+
+# WORKFLOW
+variable "workflow_details" {
+  type = object({
+    name = string
+    muting_rules_handling = string
+    issue_filter_name = string
+    issue_filter_type = string
+
+    perdicate_attribute = string
+    perdicate_operator = string
+    perdicate_values = list(string)
+  })
+}
+
 
 variable "serviceLevels" {
   description = "service level details"

@@ -1,5 +1,10 @@
-variable "recipient-email" {
-  description = "email of the recipient of alert"
+variable "destination_details" {
+  type = object({
+    name = string
+    type = string
+    property_key = string
+    recipient-email = string
+  })
 }
 
 variable "region-newrelic" {
