@@ -21,7 +21,7 @@ variable "channel_id" {
 
 variable "workflow_details" {
   type = object({
-    workflow_name = string
+    name = string
     muting_rules_handling = string
     issue_filter_name = string
     issue_filter_type = string
