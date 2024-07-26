@@ -19,6 +19,10 @@ variable "channel_id" {
   type = string
 }
 
+variable "policy_id" {
+  type = string
+}
+
 variable "workflow_details" {
   type = object({
     name = string
@@ -29,5 +33,8 @@ variable "workflow_details" {
     perdicate_attribute = string
     perdicate_operator = string
     perdicate_values = list(string)
+
+    perdicate_attribute_policy = string
+    perdicate_operator_policy = string
   })
 }

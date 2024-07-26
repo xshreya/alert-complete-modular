@@ -62,6 +62,9 @@ variable "workflow_details" {
     perdicate_attribute = string
     perdicate_operator = string
     perdicate_values = list(string)
+
+    perdicate_attribute_policy = string
+    perdicate_operator_policy = string
   })
 }
 

@@ -32,6 +32,7 @@ module "workflow" {
   nr_account_id = var.nr_account_id
   nr_api_key = var.nr_api_key
   region-newrelic = var.region-newrelic
+  policy_id = module.policy-condition.policy_id
   workflow_details = var.workflow_details
 }
 

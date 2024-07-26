@@ -161,6 +161,9 @@ workflow_details = {
   perdicate_operator = "EXACTLY_MATCHES"
 
   perdicate_values = [ "critical" ]
+
+  perdicate_attribute_policy = "labels.policyIds"
+  perdicate_operator_policy = "EXACTLY_MATCHES"
 }
 
 
