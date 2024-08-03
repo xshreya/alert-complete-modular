@@ -28,15 +28,19 @@ my-conditions = {
     slide_by = 30
     violation_time_limit_seconds = 3600
     query = "FROM SystemSample SELECT average(cpuPercent) WHERE entityName = 'DESKTOP-1FTVP0P'"
-    crt_operator = "above"
-    critical_threshold = 80
-    warning_threshold = 60
-    crt_threshold_occurences = "ALL"
-    war_operator = "above"
-    crt_threshold_duration = 300
-    war_threshold_duration = 300
-    war_threshold_occurences = "ALL"
-      }, 
+    critical = {
+      operator = "above"
+      threshold = 80
+      threshold_occurrences = "ALL"
+      threshold_duration = 300
+    }
+    warning = {
+      operator = "above"
+      threshold = 60
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+  } 
   "condition2" = {
     name = "memoryPercent"
     description = "memory usage percentage"
@@ -51,15 +55,19 @@ my-conditions = {
     slide_by = 30
     violation_time_limit_seconds = 3600
     query = "FROM SystemSample SELECT average(memoryUsedPercent) WHERE entityName = 'DESKTOP-1FTVP0P'"
-    crt_operator = "above"
-    critical_threshold = 80
-    crt_threshold_duration = 300
-    crt_threshold_occurences = "ALL"
-    war_operator = "above"
-    warning_threshold = 60
-    war_threshold_duration = 300
-    war_threshold_occurences = "ALL"
-  }, 
+    critical = {    
+      operator = "above"
+      threshold = 80
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+    warning = {
+      operator = "above"
+      threshold = 60
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+  } 
   "condition3" = {    
     name = "diskPercent"
     description = "disk usage percentage"
@@ -74,15 +82,19 @@ my-conditions = {
     slide_by = 30
     violation_time_limit_seconds = 3600
     query = "FROM SystemSample SELECT average(diskUsedPercent) WHERE entityName = 'DESKTOP-1FTVP0P'"
-    crt_operator = "above"
-    critical_threshold = 80
-    warning_threshold = 60
-    crt_threshold_occurences = "ALL"
-    war_operator = "above"
-    crt_threshold_duration = 300
-    war_threshold_duration = 300
-    war_threshold_occurences = "ALL"
-  }, 
+    critical = {
+      operator = "above"
+      threshold = 80
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+    warning = {
+      operator = "above"
+      threshold = 60
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+  }
   "condition4" = {
     name = "networkIngress"
     description = "network Ingress"
@@ -97,15 +109,19 @@ my-conditions = {
     slide_by = 30
     violation_time_limit_seconds = 3600
     query = "SELECT average(receiveBytesPerSecond) FROM NetworkSample WHERE entityName = 'DESKTOP-1FTVP0P'"
-    crt_operator = "above"
-    critical_threshold = 1000
-    warning_threshold = 800
-    crt_threshold_occurences = "ALL"
-    war_operator = "above"
-    crt_threshold_duration = 300
-    war_threshold_duration = 300
-    war_threshold_occurences = "ALL"
-  }, 
+    critical = {
+      operator = "above"
+      threshold = 1000
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+    warning = {
+      operator = "above"
+      threshold = 800
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+  }
   "condition5" = {
     name = "networkEgress"
     description = "network Egress"
@@ -120,14 +136,18 @@ my-conditions = {
     slide_by = 30
     violation_time_limit_seconds = 3600
     query = "SELECT average(transmitBytesPerSecond) FROM NetworkSample WHERE entityName = 'DESKTOP-1FTVP0P'"
-    crt_operator = "above"
-    critical_threshold = 1000
-    warning_threshold = 800
-    crt_threshold_occurences = "ALL"
-    war_operator = "above"
-    crt_threshold_duration = 300
-    war_threshold_duration = 300
-    war_threshold_occurences = "ALL"
+    critical = {
+      operator = "above"
+      threshold = 1000
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
+    warning = {
+      operator = "above"
+      threshold = 800
+      threshold_duration = 300
+      threshold_occurrences = "ALL"
+    }
   }
 }
 

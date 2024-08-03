@@ -15,7 +15,7 @@ resource "newrelic_service_level" "serviceLevel" {
         }
 
         dynamic "good_events" {
-            for_each = each.value.good_from != "" ? [each.value.good_from] : []
+            for_each = each.value.good_from != "" ? [each.value] : []
             content {
                 from = each.value.good_from
                 select {
@@ -26,7 +26,7 @@ resource "newrelic_service_level" "serviceLevel" {
         }
 
         dynamic "bad_events" {
-            for_each = each.value.bad_from != "" ? [each.value.bad_from] : []
+            for_each = each.value.bad_from != "" ? [each.value] : []
             content {
                 from = each.value.bad_from
                 select {

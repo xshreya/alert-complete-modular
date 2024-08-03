@@ -23,6 +23,6 @@ variable "policy_details" {
 
 variable "my-conditions" {
   description = "condition configuration"
-  type = map(map(any))
+  type = map(any)
 }
 

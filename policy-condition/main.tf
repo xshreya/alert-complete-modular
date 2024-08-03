@@ -29,17 +29,25 @@ resource "newrelic_nrql_alert_condition" "condition" {
     query = each.value.query
   }
 
-  critical {
-    operator              = each.value.crt_operator
-    threshold             = each.value.critical_threshold
-    threshold_duration    = each.value.crt_threshold_duration
-    threshold_occurrences = each.value.crt_threshold_occurences
+  
+
+  dynamic "critical" {
+    for_each = each.value.critical != null ? [each.value.critical] : []
+    content {
+      operator              = critical.value.operator
+      threshold             = critical.value.threshold
+      threshold_duration    = critical.value.threshold_duration
+      threshold_occurrences = critical.value.threshold_occurrences
+    }
   }
 
-  warning {
-    operator              = each.value.war_operator
-    threshold             = each.value.warning_threshold
-    threshold_duration    = each.value.war_threshold_duration
-    threshold_occurrences = each.value.war_threshold_occurences
+  dynamic "warning" {
+    for_each = each.value.warning.operator  != null ? [each.value.warning] : []
+    content {
+      operator              = warning.value.operator
+      threshold             = warning.value.threshold
+      threshold_duration    = warning.value.threshold_duration
+      threshold_occurrences = warning.value.threshold_occurrences
+    }
   }
 }

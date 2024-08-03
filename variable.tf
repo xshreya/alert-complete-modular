@@ -24,7 +24,7 @@ variable "policy_details" {
 # CONDITION
 variable "my-conditions" {
   description = "condition configuration"
-  type = map(map(any))
+  type = map(any)
 }
 
 # DESTINATION
